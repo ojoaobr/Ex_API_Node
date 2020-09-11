@@ -29,14 +29,29 @@ const lanches = [
 
 app.use(bodyParser.json());
 
-app.get('/lanches', (req, res) => {
+app.get("/lanches", (req, res) => {
+
+  // const { q } = req.query;
+  // res.send(lanches.filter(lanche => lanche.nome.includes(q)));
 
   res.json({Lanches: lanches})
 
 })
 
+// app.get("/lanches/:id", (req, res) => {
+//   const id = req.params.id;
+
+//   // busca item do array por id
+//   const item = items.find(pam => pam.id == id);
+  
+//   if(item) {
+//       res.send(item);
+//   } else {
+//       res.sendStatus(404);
+//   }
+// });
 
 // inicializa servidor http na porta PORTA
 app.listen(8080, () => {
-  console.log(`Servidor rodando na porta ${PORTA}`);
+  console.log(`Servidor ouvindo na porta ${PORTA}`);
 });
